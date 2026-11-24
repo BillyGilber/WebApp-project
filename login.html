@@ -7,8 +7,10 @@
     <style>
         * {
             box-sizing: border-box;
+            padding: 0;
+            margin: 0;
         }
-
+   
         body {
             margin: 0;
             min-height: 100vh;
@@ -71,25 +73,19 @@
 <body>
     <main class="login-card">
         <h1>Login</h1>
-         <form>
-        <label>Username:</label>
-        <input type="text" placeholder="Enter username">
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input id="username" name="username" type="text" placeholder="Enter username" required>
 
-        <br><br>
+            <label for="nickname">Nickname:</label>
+            <input id="nickname" name="nickname" type="text" placeholder="Enter nickname" required>
 
-        <label>Password:</label>
-        <input type="password" placeholder="Enter password">
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" placeholder="Enter password" required>
 
-        <br><br>
-
-        <button type="submit">Login</button>
-        <h1>Welcome to Login Page</h1>
-<form>
-  <input type="text" placeholder="Username">
-  <input type="password" placeholder="Password">
-  <button type="submit">Login</button>
-</form>
-    </form>
+            <button type="submit">Login</button>
+            <p id="message" aria-live="polite"></p>
+        </form>
     </main>
 
     <script>
