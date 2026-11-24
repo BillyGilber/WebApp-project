@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kivu Beach</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #eef7fb;
+        }
+
+        .login-card {
+            width: min(360px, calc(100% - 32px));
+            padding: 32px;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 16px;
+            padding: 12px;
+            border: 1px solid #b8c7cf;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: 0;
+            border-radius: 6px;
+            background: #087ea4;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #056b8b;
+        }
+
+        #message {
+            min-height: 20px;
+            margin: 16px 0 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main class="login-card">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+            <button type="submit">Sign in</button>
+            <p id="message" role="status" aria-live="polite"></p>
+        </form>
+    </main>
+
+    <script>
+        const loginForm = document.querySelector("#login-form");
+        const message = document.querySelector("#message");
+
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            message.textContent = "Login form submitted.";
+        });
+    </script>
+</body>
+</html>
